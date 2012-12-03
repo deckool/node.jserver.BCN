@@ -1,0 +1,57 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Barcelona RSS feeder - pick your own</title>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+/*
+*  How to use the Feed Control to grab, parse and display feeds.
+*/
+    
+    google.load("feeds", "1");
+    
+    function OnLoad() {
+      // Create a feed control
+      var feedControl = new google.feeds.FeedControl();
+    
+      // Add two feeds.
+      feedControl.addFeed("http://www.macba.cat/feeds/es/expos", "MACBA ES");
+      feedControl.addFeed("http://www.casaasia.es/public_filters/rss_generator?rss_type=casa_asia_activities", "Casa Asia activities");
+	  feedControl.addFeed("http://www.casaasia.es/public_filters/rss_generator?rss_type=internet_y_tecnologia", "Casa Asia I & T & E");
+	  feedControl.addFeed("http://fundaciomiro-bcn.org/coleccio_rss.php?idioma=4", "Fundacio Joan Miro - Coleccio");
+	  feedControl.addFeed("http://fundaciomiro-bcn.org/exposicions_rss.php?idioma=4", "Fundacio Joan Miro - Expo");
+	  feedControl.addFeed("http://fundaciomiro-bcn.org/activitats_rss.php?idioma=4", "Fundacio Joan Miro - Activitats");
+	  feedControl.addFeed("http://www.mnac.cat/rss.jsp?lan=001", "MNAC");
+      feedControl.addFeed("http://lesrevistes.cat/xml/ct/rsslesrevistescat.xml", "lesrevistes.cat");
+      feedControl.addFeed("http://iedbarcelona.es/rss/news-ES.xml", "IED Barcelona");
+      feedControl.addFeed("http://www.casabatllo.es/feed/en", "Casa Batllo");
+      feedControl.addFeed("http://rwm.macba.cat/api/es/all_podcast/all.xml", "RWM MACBA");
+      // Draw it.
+      feedControl.draw(document.getElementById("content"));
+    }
+    
+    google.setOnLoadCallback(OnLoad);
+    </script>
+    <style>
+    .gfc-resultsRoot {
+		width:300px;
+		margin-right:10px;
+		font-size:10px;
+		float:left;
+		}
+	.gfc-resultsHeader .gfc-title {
+		color:#ff0033; !important
+		font-weight:bold; !important
+		}
+    </style>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="content">Loading...</div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Hello From Node.js!</title>
+</head>
+<body>
+    <h2>Hello from Node.js!</h2>
+    <p>This is a way to cool web server, let's make some test!</p>
+    <p>Yes, they work "out of the box"</p>
+    <p>The <a href="http://www.senchalabs.org/connect/">Connect</a> form Senchalabs do all the refreshing needed for a server. Pure node don't do that (at least for me). It can be installed by npm</p>
+    <pre>
+    <code>
+    npm install connect
+    </code>
+    </pre>
+    <p>Of course, Node.js it has to be allready installed, It supplies build in repositories for major OS's as you can see on <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">Joyent Github page</a>. If you are using Ubuntu, as i do, you can folow the next lines.</p>
+    <pre>
+    <code>
+	sudo apt-get install python-software-properties
+	sudo add-apt-repository ppa:chris-lea/node.js
+	sudo apt-get update
+	sudo apt-get install nodejs npm
+    </code>
+    </pre>
+    <p>Now you can install connect by npm</p>
+    <p>For getting it running, make a <code>test.html</code> with some content</p>
+	<code>Hello From Node.js!</code>
+	<p>then the actually node.js server script as <code>node.js</code> containing</p>
+	<pre>
+    <code>
+		var connect = require('connect');
+	connect.createServer(
+		connect.static(__dirname)
+	).listen(8080);
+	</code>
+	</pre>
+	<p>From console browse to where the folder containing these two files is and run <code>node node.js</code></p>
+	<p>In the final step you should point your browser to <b>http://127.0.0.1:8080/test.html</b></p><h2>And you should read the greetings!</h2>
+	<a href="bcn.html">Go to Barcelona</a>
+</body>
+</html> 
